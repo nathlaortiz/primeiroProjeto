@@ -1,0 +1,176 @@
+* {
+  /*asterisco seleciona todos os elementos (seletor universal)*/
+  margin: 0; /*todos elementos passam a ter margem 0*/
+  padding: 0; /*todos elementos passam a ter preenchimento 0*/
+  box-sizing: border-box; /*todos os elementos vão receber o box-sizing pra fazer o calculo da caixa*/
+}
+
+:root {
+  --text-color: white;/*está sendo definido um nome qualquer para uma variável que sempre que for utilizada vai colocar a cor definida no lugar da cor atual*/
+  --bg-url: url(./assets/bg-desktop.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-desktop-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg); /*adiciona imagem ao plano de fundo*/
+  /*
+  background-repeat: no-repeat; /*não repete a imagem de fundo*/
+  /*
+  background-position: top center; /*faz com que a imagem de fundo fique centralizada desde o topo (sem o "top" a imagem irá ficar centralizada a partir da metade da vertical)*/
+  /*
+  background-size: cover; /*cobre todo o espaço visível para o caso de visualização por mobile*/
+
+  /*tudo em uma linha só:*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  /*define todos os elementos de body com as propriedades configuradas*/
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px; /*largura*/
+  margin: 56px auto 0px; /*margem de 56 pixels no topo, automática dos lados, e zero embaixo*/
+  padding: 0 24px;
+}
+
+#profile {
+  /* edita toda a caixa do elemento de ID profile*/
+  text-align: center;
+  padding: 24px; /*informação do figma*/
+}
+
+#profile img {
+  /*procura a imagem q está dentro do elemento de ID profile*/
+  width: 112px; /*no css geralmente não precisa colocar altura*/
+}
+
+#profile p {
+  /*edita apenas os elementos p (paragrafos) do elemento de ID profile*/
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px; /*espaço entre o @maykbrito e a foto*/
+}
+
+/*switch*/
+
+#switch {
+  position: relative; /*relativiza o "position:absolute" dentro do button*/
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;/*faz a sobreposição de camadas - a posiçãn do botão switch é relativa ao conteiner switch*/
+  top: 50%;
+  left:0;
+  z-index: 1;/*define a camada*/
+  transform: translateY(-50%);
+
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+
+}
+
+/*links */
+
+ul {
+  list-style: none;
+  /*lista sem estilo */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding:24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--surface-color); /*red, green, blue e ALPHA (opacidade)x*/
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px; /*arredondamento de borda*/
+  backdrop-filter: blur(4px); /*blur = embaçar*/
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*webkit = prefixo q alguns browsers vão usar pra poder liberar a página*/
+  text-decoration: none; /*tira a linha q fica nos links*/
+  font-weight: 500;
+  transition: background 0.2s;
+
+}
+
+/*pseudo-selector*/
+ul li a:hover {
+  background: var(--surface-color-hover); /*com essas configurações, quando o cursor passa pelo link ele acende*/
+  border: 1.5px solid var(--text-color);
+}
+
+/*social links*/
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px;
+
+  font-size: 24px; /*muda o tamanho da fonte dos elementos dentro do "social-links"*/
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background .2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover{
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+footer {
+  padding: 24px 0 ;
+  text-align: center;
+  font-size: 14px;
+}

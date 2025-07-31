@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- define o doc html 5 -->
+<html lang="pt-br" class="light">
+  <!-- document element ou root element = elemento raiz > lang = linguagem (pt-br) -->
+  <head>
+    <!-- tag filha ou  tag nó > head: responsavel por ajustar configurações do doc q n são visiveis pro usuário -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--infos vindas do FONTS GOOGLE-->
+    <meta charset="UTF-8" />
+    <!-- define quais os conjuntos de caracteres q serão usados (permite aceitar caracteres especiais) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tudo q visivel é viewport, está definindo q a parte visível tenha a largura do dispositivo, ou seja, se adapta ao tamanho da tela (width=device-width), initial-scale = escala inicial, ou seja, se tem zoom-->
+    <title>NathLinks</title>
+    <!-- unico q é visivel -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- onde linka o estilo no css com o html-->
+  </head>
+  <body>
+    <!-- tag filha ou  tag nó > parte q é vista pelo usuário -->
+    <div id="container">
+      <div id="profile">
+        <img src="./assets/avatar.png" alt="descrição da imagem" />
+        <!--o "alt" é a opção alternativa caso a imagem não carregue, nesse caso pode ser colocada uma descrição da imagem-->
+        <p>@maykbrito</p>
+      </div>
+
+      <div id="switch" onclick="toggleMode()">
+        <button>
+          
+        </button>
+        <span></span>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#">Inscrever-se no NLW</a>
+          <!--o "#" vai fazer com que seja possível cllicar no link, mas ele n leva a lugar nenhum-->
+        </li>
+        <li>
+          <a href="#">Baixar meu E-book</a>
+        </li>
+        <li>
+          <a href="#">Veja o meu portfólio</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">Conheça o Explorer</a>
+          <!--"_blank" mantém a página atual e abre o link em outra página-->
+          <!--ao aplicar o display flex no elemento "a" no css, o link ocupará todo o conteiner, por isso não faz sentido colocar largura fixa-->
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="https://github.com/maykbrito" target="_blank"> 
+        <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://instagram.com/maykbrito" target="_blank"> 
+        <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://youtube.com/maykbrito" target="_blank"> 
+        <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="https://linkedin.com/in/maykbrito" target="_blank"> 
+        <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+      <footer>Feito com ♥ pela <a href="https://rocketseat.com.br/">Rocketseat</a>
+      </footer>
+
+    </div>
+    <!-- ID é o identificador do elemento, no css ele virá com # na frente-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script> <!--JAVASCRIPT sendo introduzido ao código-->
+  </body>
+</html>
