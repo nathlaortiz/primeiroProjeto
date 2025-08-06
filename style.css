@@ -6,8 +6,8 @@
 }
 
 :root {
-  --text-color: white;/*está sendo definido um nome qualquer para uma variável que sempre que for utilizada vai colocar a cor definida no lugar da cor atual*/
-  --bg-url: url(./assets/bg-desktop.jpg);
+  --text-color: white; /*está sendo definido um nome qualquer para uma variável que sempre que for utilizada vai colocar a cor definida no lugar da cor atual*/
+  --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.2);
@@ -17,7 +17,7 @@
 
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-desktop-light.jpg);
+  --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.05);
@@ -37,6 +37,7 @@ body {
 
   /*tudo em uma linha só:*/
   background: var(--bg-url) no-repeat top center/cover;
+  height: 10vh;
 }
 
 body * {
@@ -85,12 +86,11 @@ body * {
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
-  position: absolute;/*faz a sobreposição de camadas - a posiçãn do botão switch é relativa ao conteiner switch*/
+  position: absolute; /*faz a sobreposição de camadas - a posiçãn do botão switch é relativa ao conteiner switch*/
   top: 50%;
-  left:0;
-  z-index: 1;/*define a camada*/
+  left: 0;
+  z-index: 1; /*define a camada*/
   transform: translateY(-50%);
-
 }
 
 .light #switch button {
@@ -107,7 +107,6 @@ body * {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
-
 }
 
 /*links */
@@ -119,7 +118,7 @@ ul {
   flex-direction: column;
   gap: 16px;
 
-  padding:24px 0;
+  padding: 24px 0;
 }
 
 ul li a {
@@ -137,12 +136,13 @@ ul li a {
   text-decoration: none; /*tira a linha q fica nos links*/
   font-weight: 500;
   transition: background 0.2s;
-
 }
 
 /*pseudo-selector*/
 ul li a:hover {
-  background: var(--surface-color-hover); /*com essas configurações, quando o cursor passa pelo link ele acende*/
+  background: var(
+    --surface-color-hover
+  ); /*com essas configurações, quando o cursor passa pelo link ele acende*/
   border: 1.5px solid var(--text-color);
 }
 
@@ -161,17 +161,29 @@ ul li a:hover {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  transition: background .2s;
-    border-radius: 50%;
+  transition: background 0.2s;
+  border-radius: 50%;
 }
 
-#social-links a:hover{
+#social-links a:hover {
   background: var(--highlight-color);
   padding: 16px;
 }
 
 footer {
-  padding: 24px 0 ;
+  padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/*media queries*/
+@media (min-width: 700px) {
+  /*de 700px pra cima serão adicionadas as configurações abaixo*/
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
