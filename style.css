@@ -46,7 +46,8 @@ body * {
 }
 
 #container {
-  width: 360px; /*largura*/
+  width: 100%; /*largura*/
+  max-width: 588px;
   margin: 56px auto 0px; /*margem de 56 pixels no topo, automática dos lados, e zero embaixo*/
   padding: 0 24px;
 }
